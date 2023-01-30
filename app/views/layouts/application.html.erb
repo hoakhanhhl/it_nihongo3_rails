@@ -10,7 +10,7 @@
 
   <body>
        <% if user_signed_in? %>
-      <p>こんにちわ, <%= current_user.email %></p>
+      <p>こんにちは, <%= link_to current_user.email, users_show_path %></p>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "サインイン", new_user_session_path %>
